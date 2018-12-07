@@ -21,7 +21,7 @@ public class ComparableLambdaExample {
 
 		Comparator<Integer> comparatorLambda1 = (a, b) -> a.compareTo(b);
 
-		System.out.println("Result of the comparator for 3 and 2 with lambda without parameter type is " + comparatorLambda.compare(3,2));
+		System.out.println("Result of the comparator for 3 and 2 with lambda without parameter type is " + comparatorLambda1.compare(3,2));
 
 
 	}
