@@ -2,6 +2,7 @@ package gr.pr.udemy.java8.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Student {
 	private String name;
@@ -10,12 +11,24 @@ public class Student {
 	private String gender;
 	List<String> activities = new ArrayList<>();
 
+	public Student() {
+	}
+
 	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
 		this.name = name;
 		this.gradeLevel = gradeLevel;
 		this.gpa = gpa;
 		this.gender = gender;
 		this.activities = activities;
+	}
+
+	public Student(String name) {
+		this.name = name;
+	}
+
+	public Student(String name, Integer gradeLevel) {
+		this.name = name;
+		this.gradeLevel = gradeLevel;
 	}
 
 	public String getGender() {
@@ -50,7 +63,9 @@ public class Student {
 		this.gpa = gpa;
 	}
 
-
+	public void printActivities() {
+		System.out.println(activities);
+	}
 
 	public List<String> getActivities() {
 		return activities;
@@ -69,6 +84,10 @@ public class Student {
 				", gender='" + gender + '\'' +
 				", activities=" + activities +
 				'}';
+	}
+
+	public boolean checkGradeLevel(int gradeLevel) {
+		return this.getGradeLevel() >= gradeLevel;
 	}
 
 

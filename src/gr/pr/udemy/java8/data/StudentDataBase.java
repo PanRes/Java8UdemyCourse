@@ -2,8 +2,11 @@ package gr.pr.udemy.java8.data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class StudentDataBase {
+
+	public static Supplier<Student> studentSupplier = () -> new Student("PR",2,5.4,"male",Arrays.asList("bicycling","coding","swimming"));
 
 	/**
 	 * Total of 6 students in the database.
