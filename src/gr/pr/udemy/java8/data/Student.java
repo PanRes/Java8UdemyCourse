@@ -2,7 +2,6 @@ package gr.pr.udemy.java8.data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class Student {
 	private String name;
