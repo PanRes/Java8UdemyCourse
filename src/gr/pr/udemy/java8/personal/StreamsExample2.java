@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.streams;
+package gr.pr.udemy.java8.personal;
 
 import gr.pr.udemy.java8.data.Student;
 import gr.pr.udemy.java8.data.StudentDataBase;
@@ -14,21 +14,23 @@ import java.util.stream.Collectors;
  * @see BiFunctionExample
  * but with streams
  */
-public class StreamsExample {
+public class StreamsExample2 {
 	public static void main(String[] args) {
 
 		Predicate<Student> filterGradeLevel = student -> student.getGradeLevel() >=3;
 		Predicate<Student> filterGPA = student -> student.getGpa() >=3.9;
 
-		Map<String, List<String>> studentActivities = StudentDataBase.getAllStudents().stream()
-				.peek(student -> System.out.println("Before filters " + student))
-				.filter(filterGradeLevel)
-				.peek(student -> System.out.println("After 1st filter " + student))
-				.filter(filterGPA)
-				.peek(student -> System.out.println("After 2nd filter " + student))
-				.collect(Collectors.toMap(Student::getName,Student::getActivities));
-
 		System.out.println();
-		System.out.println(studentActivities);
+		StudentDataBase.getAllStudents().stream()
+				.filter(filterGradeLevel)
+				.filter(filterGPA)
+				.peek(student -> {
+					if (student.getName().contains("E")){
+						student.setName("Test");
+					}
+				})
+				.collect(Collectors.toList())
+				.forEach(System.out::println);
+
 	}
 }

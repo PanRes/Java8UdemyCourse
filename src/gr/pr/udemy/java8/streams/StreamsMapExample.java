@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class StreamsMapExxaple {
+public class StreamsMapExample {
 	public static void main(String[] args) {
 
 		getStudentNamesList().forEach(System.out::println); //this will print them each element per line

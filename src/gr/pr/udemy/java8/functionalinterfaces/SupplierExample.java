@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public class SupplierExample {
 	public static void main(String[] args) {
 
-		Supplier<Student> studentSupplier = () -> new Student("PR",8,6.5, "male", Arrays.asList("swimminCod", "coding","bicycling"));
+		Supplier<Student> studentSupplier = () -> new Student("PR",8,6.5, "male", Arrays.asList("swimminCod", "coding","bicycling"), 6);
 
 		Supplier<List<Student>> listSupplier = () -> StudentDataBase.getAllStudents();
 

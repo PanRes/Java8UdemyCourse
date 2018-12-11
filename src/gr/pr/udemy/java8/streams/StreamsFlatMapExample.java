@@ -12,9 +12,9 @@ public class StreamsFlatMapExample {
 	public static void main(String[] args) {
 
 		System.out.println(printStudentActivities());
+		System.out.println(countStudentActivities());
 		System.out.println();
 		printStudentActivities().stream()
-				.distinct()
 				.forEach(System.out::println);
 
 	}
@@ -23,8 +23,18 @@ public class StreamsFlatMapExample {
 		 return StudentDataBase.getAllStudents().stream() //Stream<Student>
 				.map(Student::getActivities) //Stream<List<String>>
 				.flatMap(List::stream) //Stream<String> transforms Stream<Collections> into one Stream
-//				.distinct()
+				.distinct() //Stream<String> -> distinct values
+				.sorted() //Stream<String> -> sorts stream
 				.collect(toList());
+
+	}
+
+	public static Long countStudentActivities() {
+		 return StudentDataBase.getAllStudents().stream() //Stream<Student>
+				.map(Student::getActivities) //Stream<List<String>>
+				.flatMap(List::stream) //Stream<String> transforms Stream<Collections> into one Stream
+				.distinct()
+				.count();
 
 	}
 }
