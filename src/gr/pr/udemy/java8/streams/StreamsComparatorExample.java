@@ -7,6 +7,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Comparator.comparing;
+
 public class StreamsComparatorExample {
 
 	public static void main(String[] args) {
@@ -24,19 +26,19 @@ public class StreamsComparatorExample {
 
 	public static List<Student> getStudentsSortedByName() {
 		return StudentDataBase.getAllStudents().stream()
-				.sorted(Comparator.comparing(Student::getName))
+				.sorted(comparing(Student::getName))
 				.collect(Collectors.toList());
 	}
 
 	public static List<Student> getStudentsSortedByGPA() {
 		return StudentDataBase.getAllStudents().stream()
-				.sorted(Comparator.comparing(Student::getGpa))
+				.sorted(comparing(Student::getGpa))
 				.collect(Collectors.toList());
 	}
 
 	public static List<Student> getStudentsSortedByGPADesc() {
 		return StudentDataBase.getAllStudents().stream()
-				.sorted(Comparator.comparing(Student::getGpa).reversed())
+				.sorted(comparing(Student::getGpa).reversed())
 				.collect(Collectors.toList());
 	}
 }

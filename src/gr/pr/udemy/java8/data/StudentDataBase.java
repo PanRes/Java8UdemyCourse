@@ -2,11 +2,16 @@ package gr.pr.udemy.java8.data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 public class StudentDataBase {
 
-	public static Supplier<Student> studentSupplier = () -> new Student("PR",2,5.4,"male",Arrays.asList("bicycling","coding","swimming"),5);
+	private static final BiFunction<String, String, Bike> bikeSupplier = Bike::new;
+
+	public static Supplier<Student> studentSupplier = () -> new Student("PR",2,5.4,"male",
+			Arrays.asList("bicycling","coding","swimming"),5, Optional.ofNullable(bikeSupplier.apply("ABC","CBA")));
 
 	/**
 	 * Total of 6 students in the database.

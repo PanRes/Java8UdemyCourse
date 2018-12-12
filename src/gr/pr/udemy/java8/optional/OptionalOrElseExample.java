@@ -10,6 +10,8 @@ public class OptionalOrElseExample {
 	public static void main(String[] args) {
 
 		System.out.println("optionalOrElse: " + optionalOrElse());
+		System.out.println("optionalOrElseGet: " + optionalOrElseGet());
+		System.out.println("optionalOrElseThrow: " + optionalOrElseThrow());
 
 	}
 
@@ -17,6 +19,18 @@ public class OptionalOrElseExample {
 		Optional<Student> optionalStudent = Optional.ofNullable(null);
 
 		return optionalStudent.map(Student::getName).orElse("Default");
+	}
+
+	public static String optionalOrElseGet() {
+		Optional<Student> optionalStudent = Optional.ofNullable(null);
+
+		return optionalStudent.map(Student::getName).orElseGet(() -> "Default");
+	}
+
+	public static String optionalOrElseThrow() {
+		Optional<Student> optionalStudent = Optional.ofNullable(null);
+
+		return optionalStudent.map(Student::getName).orElseThrow(() -> new RuntimeException("No Data found"));
 	}
 
 }
