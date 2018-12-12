@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.functionalinterfaces;
+package gr.pr.udemy.java8.functional_interfaces;
 
 import gr.pr.udemy.java8.data.Student;
 import gr.pr.udemy.java8.data.StudentDataBase;

@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.imperativevsdeclarative;
+package gr.pr.udemy.java8.imperative_vs_declarative;
 
 import java.util.ArrayList;
 import java.util.Arrays;

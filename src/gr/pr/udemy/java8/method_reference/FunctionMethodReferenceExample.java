@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.methodreference;
+package gr.pr.udemy.java8.method_reference;
 
 import java.util.function.Function;
 

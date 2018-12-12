@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.methodreference;
+package gr.pr.udemy.java8.method_reference;
 
 import gr.pr.udemy.java8.data.Student;
 import gr.pr.udemy.java8.data.StudentDataBase;

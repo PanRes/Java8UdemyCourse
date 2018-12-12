@@ -1,4 +1,4 @@
-package gr.pr.udemy.java8.functionalinterfaces;
+package gr.pr.udemy.java8.functional_interfaces;
 
 public class FunctionExample1 {
 
